@@ -19,6 +19,7 @@ export default function EventCard({
         <Image
           src={image}
           alt={title}
+          loading="eager"
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />

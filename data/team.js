@@ -70,7 +70,7 @@ export const team = [
     team: "pr",
     email: "23je0562@iitism.ac.in",
     phone: "+91-7995032473",
-    image: "/team/sponsor1.jpeg"
+    image: "/team/pr.jpeg"
   },
 
   {
@@ -80,7 +80,7 @@ export const team = [
     team: "event",
     email: "23je0547@iitism.ac.in",
     phone: "+91-9044566755",
-    image: "/team/event.jpg"
+    image: ""
   },
   
 ];
