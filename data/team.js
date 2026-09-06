@@ -1,22 +1,12 @@
 export const team = [
   {
-    name: "Prof. Vasanta Govind Kumar Villuri",
-    role: "Convener",
-    department: "Faculty",
-    team: "convener",
-    email: "vgkvilluri@iitism.ac.in",
-    phone: "+91-9471192205",
+    name: "Seemala Devi Sri Pranay",
+    role: "Coordinator",
+    department: "Governing Team",
+    team: "secretariat",
+    email: "23je0894@iitism.ac.in",
+    phone: "+91-6301664005",
   },
-
-  {
-    name: "Prof. Niptika Jana",
-    role: "Co-convener",
-    department: "Faculty",
-    team: "convener",
-    email: "niptikaj@iitism.ac.in",
-    phone: "+91-9903080428",
-  },
-
   {
     name: "Adwait Bhor",
     role: "General Secretary",
@@ -25,14 +15,13 @@ export const team = [
     email: "gsec_snt@iitism.ac.in",
     phone: "+91-9967099607",
   },
-
   {
-    name: "Seemala Devi Sri Pranay",
-    role: "Coordinator",
+    name: "xyz",
+    role: "President",
     department: "Governing Team",
-    team: "coordinators",
-    email: "23je0894@iitism.ac.in",
-    phone: "+91-6301664005",
+    team: "secretariat",
+    email: "abc@iitism.ac.in",
+    phone: "1233456",
   },
 
   {
@@ -42,6 +31,7 @@ export const team = [
     team: "co-coordinators",
     email: "23je0692@iitism.ac.in",
     phone: "+91-7459819700",
+    image: "/team/ccparas.jpeg"
   },
 
   {
@@ -51,6 +41,7 @@ export const team = [
     team: "co-coordinators",
     email: "23je0692@iitism.ac.in",
     phone: "+91-7459819700",
+    image: "/team/ccsurendra.jpeg"
   },
 
   {
@@ -60,6 +51,7 @@ export const team = [
     team: "co-coordinators",
     email: "23je0043@iitism.ac.in",
     phone: "+91-7082142615",
+    image: "/team/ccaditya.jpeg"
   },
 
   {
@@ -78,6 +70,7 @@ export const team = [
     team: "pr",
     email: "23je0562@iitism.ac.in",
     phone: "+91-7995032473",
+    image: "/team/sponsor1.jpeg"
   },
 
   {
@@ -87,5 +80,7 @@ export const team = [
     team: "event",
     email: "23je0547@iitism.ac.in",
     phone: "+91-9044566755",
+    image: "/team/event.jpg"
   },
+  
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight, CheckCircle2, Home, MapPin } from "lucide-react";
+import SpaceBackground from "../SpaceBackground";
 
 const notes = [
   "Accommodation will be provided in designated hostels/guest facilities.",
@@ -12,7 +13,6 @@ const notes = [
 export default function Accommodation() {
   return (
     <main className="relative overflow-hidden bg-[var(--background)]">
-
       {/* Background glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[var(--primary)]/5 blur-[140px]" />
 

@@ -1,3 +1,4 @@
+import SpaceBackground from "../SpaceBackground";
 import Glimpses from "./Glimpses";
 import Message from "./Message";
 import { messages } from "@/data/messages";

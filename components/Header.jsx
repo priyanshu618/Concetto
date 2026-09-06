@@ -9,11 +9,12 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Events", href: "/events" },
-   { name: "About Us", href: "/about-us" },
   { name: "Accommodation", href: "/accommodation" },
-  // { name: "Workshops", href: "#workshops" },
-  { name: "Sponsors", href: "/sponsors" },
-  { name: "Merchandise", href: "/merchandise" },
+  { name: "Workshops", href: "/workshops" },
+   { name: "Sponsors", href: "/sponsors" },
+   { name: "About Us", href: "/about-us" },
+   { name: "Merchandise", href: "/merchandise" },
+ 
   { name: "Teams", href: "/teams" },
 ];
 
@@ -107,7 +108,7 @@ export default function Header() {
     items-center
     gap-8
     lg:flex
-    xl:gap-12
+    xl:gap-10
   "
 >
   {navItems.map((item) => (

@@ -31,7 +31,7 @@ export default function StarField() {
         z: Math.random() * canvas.width + 200,
 
         size: Math.random() * 2 + 0.4,
-        speed: Math.random() * 10.0 + 1.5,
+        speed: Math.random() * 10.0 + 0.5,
 
         opacity: Math.random() * 0.8 + 0.2,
         twinkle: Math.random() * 0.02 + 0.005,
