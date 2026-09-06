@@ -132,58 +132,8 @@ export default function Header() {
   ))}
 </div>
 
-        {/* Desktop Theme Toggle */}
-        <button
-          type="button"
-          onClick={toggleTheme}
-          className="
-            ml-auto
-            hidden
-            shrink-0
-            rounded-full
-            border
-            border-(--border)
-            p-2.5
-            transition-colors
-            duration-200
-            hover:border-(--primary)
-            lg:block
-          "
-          aria-label="Toggle theme"
-        >
-          {mounted &&
-            (theme === "dark" ? (
-              <Sun size={18} />
-            ) : (
-              <Moon size={18} />
-            ))}
-        </button>
-
         {/* Mobile Controls */}
         <div className="ml-auto flex items-center gap-3 lg:hidden">
-          {/* Theme Toggle */}
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="
-              shrink-0
-              rounded-full
-              border
-              border-(--border)
-              p-2.5
-              transition-colors
-              duration-200
-              hover:border-(--primary)
-            "
-            aria-label="Toggle theme"
-          >
-            {mounted &&
-              (theme === "dark" ? (
-                <Sun size={19} />
-              ) : (
-                <Moon size={19} />
-              ))}
-          </button>
 
           {/* Menu */}
           <button

@@ -146,7 +146,7 @@ export default function Hero() {
           className="group mt-8 flex items-center gap-3 rounded-full border border-(--primary) px-6 py-3 text-xs font-semibold uppercase tracking-widest transition-all hover:bg-(--primary) hover:text-white"
           onClick={scrollToTimeline}
         >
-          Explore
+          TIMELINE
 
           <ArrowDown
             size={15}
