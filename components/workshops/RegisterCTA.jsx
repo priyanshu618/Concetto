@@ -1,6 +1,12 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 
 export default function RegisterCTA() {
+    const scrollToTracks = () => {
+    document.getElementById("workshop-tracks")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
   return (
     <section className="relative overflow-hidden bg-(--surface) px-5 py-20 md:px-10 md:py-24">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--primary)/10 blur-[100px]" />
@@ -19,13 +25,13 @@ export default function RegisterCTA() {
           you.
         </p>
 
-        <a
-          href="#workshop-tracks"
+        <button
+          onClick={scrollToTracks}
           className="mt-8 inline-flex items-center gap-3 rounded-full border border-(--primary) px-6 py-3 text-xs font-semibold uppercase tracking-widest text-(--foreground) transition-all hover:bg-(--primary) hover:text-white"
         >
           Explore Workshops
           <ArrowRight size={16} />
-        </a>
+        </button>
       </div>
     </section>
   );

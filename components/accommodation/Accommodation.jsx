@@ -48,17 +48,6 @@ export default function Accommodation() {
             process.
           </p>
 
-          {/* Official form */}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdjceqjXB7BJhZT4LKZMeFvKzsv91WwTQjLmy7MgoNEkerS2g/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/40 bg-[var(--surface)] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[var(--primary)] transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
-          >
-            Official Accommodation Form
-            <ArrowUpRight size={14} />
-          </a>
-
           {/* Main CTA */}
           <div className="mt-8">
             <a

@@ -47,9 +47,6 @@ export default function Hero() {
         <div className="absolute bottom-[18%] left-[5%] flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-(--primary)" />
           <span className="h-px w-14 bg-(--border)" />
-          <span className="text-[8px] uppercase tracking-[0.3em] text-(--text-muted)">
-            SYS_01
-          </span>
         </div>
       </div>
 
@@ -78,9 +75,6 @@ export default function Hero() {
         </div>
 
         <div className="absolute bottom-[18%] right-[5%] flex items-center gap-2">
-          <span className="text-[8px] uppercase tracking-[0.3em] text-(--text-muted)">
-            SYS_02
-          </span>
           <span className="h-px w-14 bg-(--border)" />
           <span className="h-1.5 w-1.5 rounded-full bg-(--primary)" />
         </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function WorkshopCard({ workshop }) {
   return (
@@ -11,10 +11,10 @@ export default function WorkshopCard({ workshop }) {
           alt={workshop.title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
 
-        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
 
         <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/50 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-md">
           {String(workshop.id).padStart(2, "0")}
@@ -25,21 +25,10 @@ export default function WorkshopCard({ workshop }) {
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h2 className="text-2xl font-bold leading-tight text-(--foreground)">
+      <div className="flex flex-1 flex-col p-5 md:p-6 gap-2">
+        <h2 className="text-xl font-bold text-(--foreground)">
           {workshop.title}
         </h2>
-
-        {/* {workshop.description && (
-          <p className="mt-4 text-sm leading-7 text-(--text-muted)">
-            {workshop.description}
-          </p>
-        )} */}
-
-        <div className="py-5 flex items-center gap-2 text-sm text-(--text-muted)">
-          <MapPin size={17} className="text-(--primary)" />
-          <span>{workshop.mode}</span>
-        </div>
 
         <Link
           href={`/workshops/${workshop.slug}`}
