@@ -2,160 +2,444 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
+import {
+  FaLinkedinIn,
+  FaInstagram,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function Card({ member }) {
   const [showProfile, setShowProfile] = useState(false);
 
   return (
     <>
-      {/* Team Card */}
+      {/* ================= TEAM CARD ================= */}
       <article className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/60">
 
         {/* Photo */}
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={member.image || "/team/default.jpg"}
-            alt={member.name}
+            alt={member.name || "Team Member"}
             fill
             className="object-cover transition duration-500 group-hover:scale-105"
           />
 
-          {/* View Profile Button */}
+          {/* View Profile */}
           <button
             onClick={() => setShowProfile(true)}
-            className="absolute bottom-3 right-3 rounded-lg bg-black/75 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-[var(--primary)]"
+            className="absolute bottom-3 right-3 rounded-lg bg-black/75 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm transition duration-300 hover:bg-[var(--primary)]"
           >
             View Profile
           </button>
         </div>
 
         {/* Basic Info */}
-        <div className="p-5 bg-(--surface)">
+        <div className="bg-[var(--surface)] p-5">
           <h3 className="text-base font-bold text-[var(--foreground)]">
-            {member.name}
+            {member.name || "—"}
           </h3>
-
         </div>
       </article>
 
-      {/* Profile Popup */}
+      {/* ================= PROFILE POPUP ================= */}
       {showProfile && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
           onClick={() => setShowProfile(false)}
         >
           <div
-            className="relative w-full max-w-md overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl"
+            className="relative flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl md:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close */}
+            {/* ================= CLOSE ================= */}
             <button
               onClick={() => setShowProfile(false)}
-              className="absolute right-3 top-3 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-base text-white transition hover:bg-[var(--primary)]"
+              aria-label="Close profile"
+              className="absolute right-4 top-4 z-30 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-lg text-white backdrop-blur-sm transition duration-300 hover:scale-110 hover:bg-[var(--primary)]"
             >
               ×
             </button>
 
-            {/* Profile Image */}
-            <div className="relative h-48 w-full">
+            {/* ================= LEFT : PHOTO ================= */}
+            <div className="relative h-64 w-full shrink-0 md:h-auto md:min-h-[520px] md:w-1/2">
               <Image
                 src={member.image || "/team/default.jpg"}
-                alt={member.name}
+                alt={member.name || "Team Member"}
                 fill
                 className="object-cover"
               />
             </div>
 
-            {/* Heading */}
-            <div className="px-5 pt-5">
-              <h2 className="text-xl font-bold text-[var(--foreground)]">
-                {member.name || "—"}
-              </h2>
-              
-          <p className="mt-1 text-xs font-medium text-[var(--primary)]">
-            {member.role}
-          </p>
+            {/* ================= RIGHT : DETAILS ================= */}
+            <div className="flex min-h-0 w-full flex-col overflow-y-auto md:w-1/2">
 
-          <p className="mt-1 text-[11px] text-[var(--muted)]">
-            {member.department}
-          </p>
-            </div>
+              {/* ================= HEADER ================= */}
+              <div className="px-7 pb-5 pt-10 md:px-8 md:pt-12">
 
-            {/* Contact Details */}
-            <div className="px-5 py-5 space-y-3">
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+                  Team Member
+                </p>
 
-              {/* Email */}
-              <div className="flex items-center gap-3">
-                <FaEnvelope className="text-sm text-[var(--primary)]" />
+                <h2 className="text-2xl font-bold leading-tight text-[var(--foreground)] md:text-3xl">
+                  {member.name || "—"}
+                </h2>
 
-                <div>
-                  <p className="text-[9px] uppercase tracking-wider text-[var(--muted)]">
-                    College Email
-                  </p>
-                  <p className="mt-0.5 break-all text-xs text-[var(--foreground)]">
-                    {member.email || "—"}
-                  </p>
+                {/* Role only */}
+                <p className="mt-3 text-sm font-semibold text-[var(--primary)]">
+                  {member.role || "—"}
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="mx-7 h-px bg-[var(--border)] md:mx-8" />
+
+              {/* ================= CONTACT DETAILS ================= */}
+              <div className="space-y-3 px-7 py-7 md:px-8">
+
+                {/* ================= EMAIL ================= */}
+                <div
+                  className="
+                    group/detail
+                    flex items-center gap-4
+                    rounded-xl
+                    border border-[var(--border)]
+                    bg-transparent
+                    p-4
+                    transition-all duration-300
+                    hover:-translate-y-0.5
+                    hover:border-[var(--primary)]/50
+                    hover:bg-gradient-to-r
+                    hover:from-[var(--primary)]/15
+                    hover:to-transparent
+                  "
+                >
+                  {/* Icon */}
+                  <div
+                    className="
+                      flex h-11 w-11 shrink-0 items-center justify-center
+                      rounded-lg
+                      border border-[var(--border)]
+                      bg-[var(--surface)]
+                      transition-all duration-300
+                      group-hover/detail:border-[var(--primary)]/50
+                      group-hover/detail:bg-[var(--primary)]/10
+                    "
+                  >
+                    <FaEnvelope className="text-sm text-[var(--primary)]" />
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[var(--muted)]">
+                      College Email
+                    </p>
+
+                    <p className="mt-1 break-all text-sm font-medium text-[var(--foreground)]">
+                      {member.email || "—"}
+                    </p>
+                  </div>
+                </div>
+
+                {/* ================= PHONE ================= */}
+                <div
+                  className="
+                    group/detail
+                    flex items-center gap-4
+                    rounded-xl
+                    border border-[var(--border)]
+                    bg-transparent
+                    p-4
+                    transition-all duration-300
+                    hover:-translate-y-0.5
+                    hover:border-[var(--primary)]/50
+                    hover:bg-gradient-to-r
+                    hover:from-[var(--primary)]/15
+                    hover:to-transparent
+                  "
+                >
+                  {/* Icon */}
+                  <div
+                    className="
+                      flex h-11 w-11 shrink-0 items-center justify-center
+                      rounded-lg
+                      border border-[var(--border)]
+                      bg-[var(--surface)]
+                      transition-all duration-300
+                      group-hover/detail:border-[var(--primary)]/50
+                      group-hover/detail:bg-[var(--primary)]/10
+                    "
+                  >
+                    <FaPhone className="text-sm text-[var(--primary)]" />
+                  </div>
+
+                  <div>
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[var(--muted)]">
+                      Phone
+                    </p>
+
+                    <p className="mt-1 text-sm font-medium text-[var(--foreground)]">
+                      {member.phone || "—"}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Phone */}
-              <div className="flex items-center gap-3">
-                <FaPhone className="text-sm text-[var(--primary)]" />
+              {/* ================= CONNECT ================= */}
+              <div className="mt-auto border-t border-[var(--border)] px-7 py-5 md:px-8">
 
-                <div>
-                  <p className="text-[9px] uppercase tracking-wider text-[var(--muted)]">
-                    Phone
-                  </p>
-                  <p className="mt-0.5 text-xs text-[var(--foreground)]">
-                    {member.phone || "—"}
-                  </p>
+                <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.15em] text-[var(--muted)]">
+                  Connect
+                </p>
+
+                <div className="flex items-center gap-3">
+
+                  {/* =====================================================
+                      LINKEDIN
+                      Button ALWAYS visible
+                  ====================================================== */}
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="
+                        group/social
+                        relative flex h-11 w-11
+                        items-center justify-center
+                        overflow-hidden
+                        rounded-lg
+                        border border-[var(--border)]
+                        bg-[var(--surface)]
+                        text-[var(--foreground)]
+                        transition-all duration-300
+                        hover:-translate-y-1
+                        hover:border-[var(--primary)]
+                        hover:text-[var(--primary)]
+                        hover:shadow-[0_0_16px_var(--primary)]
+                      "
+                    >
+                      {/* Gradient */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          translate-y-full
+                          bg-gradient-to-t
+                          from-[var(--primary)]/30
+                          via-[var(--primary)]/10
+                          to-transparent
+                          transition-transform duration-300
+                          group-hover/social:translate-y-0
+                        "
+                      />
+
+                      {/* Shine */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          bg-gradient-to-br
+                          from-[var(--primary)]/10
+                          to-transparent
+                          opacity-0
+                          transition-opacity duration-300
+                          group-hover/social:opacity-100
+                        "
+                      />
+
+                      <FaLinkedinIn
+                        className="
+                          relative z-10 text-sm
+                          transition-all duration-300
+                          group-hover/social:scale-125
+                        "
+                      />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      aria-label="LinkedIn not available"
+                      className="
+                        group/social
+                        relative flex h-11 w-11
+                        items-center justify-center
+                        overflow-hidden
+                        rounded-lg
+                        border border-[var(--border)]
+                        bg-[var(--surface)]
+                        text-[var(--foreground)]
+                        transition-all duration-300
+                        hover:-translate-y-1
+                        hover:border-[var(--primary)]
+                        hover:text-[var(--primary)]
+                        hover:shadow-[0_0_16px_var(--primary)]
+                      "
+                    >
+                      {/* Gradient */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          translate-y-full
+                          bg-gradient-to-t
+                          from-[var(--primary)]/30
+                          via-[var(--primary)]/10
+                          to-transparent
+                          transition-transform duration-300
+                          group-hover/social:translate-y-0
+                        "
+                      />
+
+                      {/* Shine */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          bg-gradient-to-br
+                          from-[var(--primary)]/10
+                          to-transparent
+                          opacity-0
+                          transition-opacity duration-300
+                          group-hover/social:opacity-100
+                        "
+                      />
+
+                      <FaLinkedinIn
+                        className="
+                          relative z-10 text-sm
+                          transition-all duration-300
+                          group-hover/social:scale-125
+                        "
+                      />
+                    </button>
+                  )}
+
+                  {/* =====================================================
+                      INSTAGRAM
+                      Button ALWAYS visible
+                  ====================================================== */}
+                  {member.instagram ? (
+                    <a
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="
+                        group/social
+                        relative flex h-11 w-11
+                        items-center justify-center
+                        overflow-hidden
+                        rounded-lg
+                        border border-[var(--border)]
+                        bg-[var(--surface)]
+                        text-[var(--foreground)]
+                        transition-all duration-300
+                        hover:-translate-y-1
+                        hover:border-[var(--primary)]
+                        hover:text-[var(--primary)]
+                        hover:shadow-[0_0_16px_var(--primary)]
+                      "
+                    >
+                      {/* Gradient */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          translate-y-full
+                          bg-gradient-to-t
+                          from-[var(--primary)]/30
+                          via-[var(--primary)]/10
+                          to-transparent
+                          transition-transform duration-300
+                          group-hover/social:translate-y-0
+                        "
+                      />
+
+                      {/* Shine */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          bg-gradient-to-br
+                          from-[var(--primary)]/10
+                          to-transparent
+                          opacity-0
+                          transition-opacity duration-300
+                          group-hover/social:opacity-100
+                        "
+                      />
+
+                      <FaInstagram
+                        className="
+                          relative z-10 text-sm
+                          transition-all duration-300
+                          group-hover/social:scale-125
+                        "
+                      />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      aria-label="Instagram not available"
+                      className="
+                        group/social
+                        relative flex h-11 w-11
+                        items-center justify-center
+                        overflow-hidden
+                        rounded-lg
+                        border border-[var(--border)]
+                        bg-[var(--surface)]
+                        text-[var(--foreground)]
+                        transition-all duration-300
+                        hover:-translate-y-1
+                        hover:border-[var(--primary)]
+                        hover:text-[var(--primary)]
+                        hover:shadow-[0_0_16px_var(--primary)]
+                      "
+                    >
+                      {/* Gradient */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          translate-y-full
+                          bg-gradient-to-t
+                          from-[var(--primary)]/30
+                          via-[var(--primary)]/10
+                          to-transparent
+                          transition-transform duration-300
+                          group-hover/social:translate-y-0
+                        "
+                      />
+
+                      {/* Shine */}
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute inset-0
+                          bg-gradient-to-br
+                          from-[var(--primary)]/10
+                          to-transparent
+                          opacity-0
+                          transition-opacity duration-300
+                          group-hover/social:opacity-100
+                        "
+                      />
+
+                      <FaInstagram
+                        className="
+                          relative z-10 text-sm
+                          transition-all duration-300
+                          group-hover/social:scale-125
+                        "
+                      />
+                    </button>
+                  )}
+
                 </div>
               </div>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 border-t border-[var(--border)] px-5 py-4">
-
-              {/* LinkedIn */}
-              {member.linkedin ? (
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--foreground)] transition hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
-                >
-                  <FaLinkedinIn className="text-sm" />
-                </a>
-              ) : (
-                <div
-                  aria-label="LinkedIn unavailable"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--muted)]"
-                >
-                  <FaLinkedinIn className="text-sm" />
-                </div>
-              )}
-
-              {/* Instagram */}
-              {member.instagram ? (
-                <a
-                  href={member.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--foreground)] transition hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white"
-                >
-                  <FaInstagram className="text-sm" />
-                </a>
-              ) : (
-                <div
-                  aria-label="Instagram unavailable"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--muted)]"
-                >
-                  <FaInstagram className="text-sm" />
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -163,4 +447,3 @@ export default function Card({ member }) {
     </>
   );
 }
-
