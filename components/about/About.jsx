@@ -30,7 +30,7 @@ export default function About() {
             Discover Concetto
           </p>
 
-          <h1 className="mt-3 text-4xl font-black uppercase tracking-tight md:text-6xl">
+          <h1 className="mt-3 text-4xl font-black text-(--heading-text) uppercase tracking-tight md:text-6xl">
             About Us
             <span className="text-[var(--primary)]">.</span>
           </h1>

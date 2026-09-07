@@ -21,7 +21,7 @@ export default function Merchandise() {
           Official Merchandise
         </p>
 
-        <h1 className="mt-3 text-4xl font-black uppercase tracking-tight md:text-6xl">
+        <h1 className="mt-3 text-4xl font-black uppercase tracking-tight text-(--heading-text) md:text-6xl">
           Wear Concetto<span className="text-[var(--primary)]">.</span>
         </h1>
 

@@ -112,7 +112,7 @@ export default function Footer() {
             <div className="mt-3 h-px w-32 bg-[var(--primary)]/50" />
 
             <Link
-              href="#merchandise"
+              href="/merchandise"
               className="mt-7 block w-fit text-sm font-medium transition-colors hover:text-[var(--primary)]"
             >
               T-Shirts

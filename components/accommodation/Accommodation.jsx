@@ -30,7 +30,7 @@ export default function Accommodation() {
             Concetto 2026
           </p>
 
-          <h1 className="text-4xl font-black uppercase tracking-tight text-[var(--foreground)] md:text-6xl">
+          <h1 className="text-4xl font-black uppercase tracking-tight text-(--heading-text) md:text-6xl">
             Accommodation
           </h1>
 

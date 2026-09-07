@@ -5,7 +5,7 @@ export default function Hero() {
         Concetto '26
       </p>
 
-      <h1 className="mt-3 text-4xl font-bold uppercase tracking-tight text-[var(--foreground)] md:text-5xl">
+      <h1 className="mt-3 text-4xl font-black uppercase tracking-tight text-(--heading-text) md:text-5xl">
         Our Team
       </h1>
 

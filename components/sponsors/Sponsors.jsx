@@ -12,7 +12,7 @@ export default function Sponsors() {
           Concetto 2026
         </p>
 
-        <h1 className="mt-3 text-4xl font-black text-[var(--foreground)] md:text-6xl">
+        <h1 className="mt-3 text-4xl font-black text-(--heading-text) md:text-6xl">
           Our Sponsors
         </h1>
 

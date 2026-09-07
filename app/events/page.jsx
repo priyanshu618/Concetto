@@ -42,7 +42,7 @@ export default function EventsPage() {
             Concetto 2026
           </p>
 
-          <h1 className="text-4xl font-black uppercase tracking-tight text-(--foreground) md:text-5xl">
+          <h1 className="text-4xl font-black uppercase tracking-tight text-(--heading-text) md:text-5xl">
             Explore
             <span className="text-[var(--primary)]"> Events.</span>
           </h1>

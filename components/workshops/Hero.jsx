@@ -32,7 +32,7 @@ export default function Hero() {
           Concetto 2026
         </p>
 
-        <h1 className="text-3xl font-black uppercase tracking-tight text-(--foreground) sm:text-4xl md:text-6xl">
+        <h1 className="text-3xl font-black uppercase tracking-tight text-(--heading-text) sm:text-4xl md:text-6xl">
           Workshops
         </h1>
 
