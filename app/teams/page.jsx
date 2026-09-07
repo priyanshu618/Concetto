@@ -11,6 +11,7 @@ export default function TeamPage() {
   const [active, setActive] = useState("All Team");
 
   const departments = [...new Set(team.map((member) => member.department))];
+  const teams = [...new Set(team.map((member) => member.team))];
 
   const filteredTeam = useMemo(() => {
     if (active === "All Team") return team;
@@ -28,7 +29,7 @@ export default function TeamPage() {
       />
 
       <section className="mx-auto max-w-5xl px-5 pb-20">
-        <Grid members={filteredTeam} />
+        <Grid members={filteredTeam} teams={teams} />
       </section>
     </main>
   );

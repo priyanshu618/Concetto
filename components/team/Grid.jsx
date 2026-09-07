@@ -1,27 +1,14 @@
 import Card from "./Card";
 
-export default function Grid({ members }) {
-  const teams = [
-    "convener",
-    "secretariat",
-    "coordinators",
-    "co-coordinators",
-    "pr",
-    "event",
-    "sponsorship",
-  ];
+export default function Grid({ members, teams }) {
 
-  const smallTeams = ["pr", "event", "sponsorship"];
-
-  const regularTeams = teams.filter(
-    (team) => !smallTeams.includes(team)
-  );
+  const smallTeams = ["pr", "event management", "sponsorship"];
 
   return (
     <div className="space-y-20">
 
       {/* Regular Teams */}
-      {regularTeams.map((team) => {
+      {teams.map((team) => {
         const teamMembers = members.filter(
           (member) => member.team === team
         );
