@@ -31,6 +31,8 @@ export const team = [
     team: "co-coordinators",
     email: "23je0692@iitism.ac.in",
     phone: "+91-7459819700",
+    linkedin: "https://www.linkedin.com/in/parsh-chandra-00b734296/",
+    instagram: "https://www.instagram.com/its._.parsh/",
     image: "/team/ccparas.jpeg"
   },
 
