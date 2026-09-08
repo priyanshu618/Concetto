@@ -45,12 +45,9 @@ export default async function WorkshopPage({ params }) {
         info={workshopInfo}
         registration={registration}
       />
-
+       <SpecialOffer offer={specialOffer} />
+        <Facilities facilities={workshopFacilities} />
       <Benefits benefits={workshopBenefits} />
-
-      <SpecialOffer offer={specialOffer} />
-
-      <Facilities facilities={workshopFacilities} />
     </>
   );
 }
