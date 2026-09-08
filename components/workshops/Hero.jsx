@@ -37,7 +37,9 @@ export default function Hero() {
         </h1>
 
         <div className="mx-auto mt-6 h-px w-24 bg-(--primary)" />
-
+        <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-(--primary) md:text-base">
+          Edufabrica in Collaboration with Concetto 2026 Presents
+        </p>
         <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-(--text-muted) md:text-base">
           Explore specialized workshop tracks across emerging technologies,
           science, and innovation.
