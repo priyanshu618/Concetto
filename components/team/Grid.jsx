@@ -1,15 +1,9 @@
 import Card from "./Card";
 
 export default function Grid({ members, teams }) {
-
-  const smallTeams = ["pr", "event management", "sponsorship"];
-    const regularTeam = teams.filter(team => !smallTeams.includes(team));
-    
   return (
     <div className="space-y-20">
-
-      {/* Regular Teams */}
-      {regularTeam.map((team) => {
+      {teams.map((team) => {
         const teamMembers = members.filter(
           (member) => member.team === team
         );
@@ -49,39 +43,6 @@ export default function Grid({ members, teams }) {
           </section>
         );
       })}
-
-      {/* PR + Event + Sponsorship */}
-      <section>
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          {smallTeams.map((team) => {
-            const teamMembers = members.filter(
-              (member) => member.team === team
-            );
-
-            if (teamMembers.length === 0) return null;
-
-            return (
-              <div key={team}>
-                {/* Team heading */}
-                <div className="mb-7 text-center">
-                  <h2 className="text-xl font-bold uppercase tracking-tight text-[var(--foreground)] md:text-2xl">
-                    {team} Team
-                  </h2>
-
-                  <div className="mx-auto mt-3 h-1 w-12 rounded-full bg-[var(--primary)]" />
-                </div>
-
-                {/* Members */}
-                <div className="space-y-6">
-                  {teamMembers.map((member) => (
-                    <Card key={member.name} member={member} />
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
     </div>
   );
 }

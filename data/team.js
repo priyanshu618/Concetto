@@ -16,12 +16,12 @@ export const team = [
     phone: "+91-9967099607",
   },
   {
-    name: "xyz",
+    name: "Jyotiraditya Singh",
     role: "President",
     department: "Secretariat Team",
     team: "secretariat",
     email: "abc@iitism.ac.in",
-    phone: "1233456",
+    phone: "+91-8159907830",
   },
 
   {
@@ -66,16 +66,6 @@ export const team = [
   },
 
   {
-    name: "Manuwada Adithya",
-    role: "PR Head",
-    department: "PR",
-    team: "pr",
-    email: "23je0562@iitism.ac.in",
-    phone: "+91-7995032473",
-    image: "/team/pr.jpeg"
-  },
-
-  {
     name: "Manas Gupta",
     role: "Event Head",
     department: "Event Management",
@@ -116,6 +106,7 @@ export const team = [
     department: "Public Relation",
     team: "public relation",
     email: "23je0562@iitism.ac.in",
+    image: "/team/pr.jpeg",
     phone: "",
   },
   {
