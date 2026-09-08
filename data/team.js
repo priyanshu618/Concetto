@@ -261,7 +261,7 @@ export const team = [
     team: "security",
     email: "23je0469@iitism.ac.in",
     phone: "",
-    image: "/team/sec-kc.jpg"
+    image: "/team/sec-kc.JPG"
   },
   {
     name: "Shipal",
