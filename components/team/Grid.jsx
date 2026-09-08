@@ -3,12 +3,13 @@ import Card from "./Card";
 export default function Grid({ members, teams }) {
 
   const smallTeams = ["pr", "event management", "sponsorship"];
-
+    const regularTeam = teams.filter(team => !smallTeams.includes(team));
+    
   return (
     <div className="space-y-20">
 
       {/* Regular Teams */}
-      {teams.map((team) => {
+      {regularTeam.map((team) => {
         const teamMembers = members.filter(
           (member) => member.team === team
         );
