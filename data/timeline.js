@@ -54,8 +54,8 @@ export const timelineData = [
         time: "10:00 AM – 11:00 AM",
         venue: "To be notified",
       },
-        {
-        title: "Apti Quest — Fintech",
+      {
+        title: "QuesTree",
         time: "10:00 AM – 12:00 AM",
         venue: "NLHC, IIT ISM Dhanbad",
       },
@@ -64,6 +64,7 @@ export const timelineData = [
         time: "11:00 AM – 12:00 PM",
         venue: "To be notified",
       },
+      
       {
         title: "Aethera — Environmental",
         time: "11:00 AM – 12:00 PM",
@@ -144,6 +145,11 @@ export const timelineData = [
         title: "Escape Room — Maths Club",
         time: "10:00 AM – 11:00 AM",
         venue: "To be notified",
+      },
+      {
+        title: "Apti Quest — Fintech",
+        time: "10:00 AM – 12:00 AM",
+        venue: "NLHC, IIT ISM Dhanbad",
       },
       {
         title: "Edge AI Challenge — Electronics & IoT",
